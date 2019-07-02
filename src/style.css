@@ -14,15 +14,47 @@ body {
   font-style: normal;
   font-stretch: normal;
   letter-spacing: normal;
+  margin: 0px;
+  padding: 0px;
 }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 994px;
+  margin: 40px auto;
+}
+.logo {
+  display: flex;
+  width: 85px;
+  height: 85px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a.active {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.menu ul li {
+  list-style: none;
+  display: inline;
+  margin-left: 32px;
+}
+
 .heroBanner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: auto;
-  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
   background-color: #f9f9f9;
-  align-content: space-around;
-  padding: 40px 143px 57px 143px;
+  padding: 46px 0;
+}
+.textHeroBanner {
+  flex: 1;
+  max-width: 460px;
 }
 .textHeroBanner h1 {
   font-size: 24px;
@@ -30,13 +62,15 @@ body {
 }
 .textHeroBanner h3 {
   font-weight: normal;
+  margin-bottom: 80px;
 }
 .imgHeroBanner {
-  justify-self: right;
-  position: relative;
-  height: 60%;
-  width: 70%;
-  object-fit: contain;
+  flex: 1;
+  max-width: 310px;
+}
+
+.imgHeroBanner img {
+  width: 100%;
 }
 
 .button {
@@ -51,4 +85,36 @@ body {
   max-width: 287px;
   max-height: 51px;
   cursor: pointer;
+}
+
+@media (max-width: 1016px) {
+  header,
+  .heroBanner {
+    padding: 20px 40px;
+  }
+}
+
+@media (max-width: 440px) {
+  .textHeroBanner h3 {
+    display: none;
+  }
+
+  .textHeroBanner h1 {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .button {
+    font-size: 14px;
+    padding: 11px 30px;
+  }
+}
+
+@media (max-width: 340px) {
+  .menu ul li {
+    margin-left: 25px;
+  }
+  .menu ul {
+    padding: 0;
+  }
 }
