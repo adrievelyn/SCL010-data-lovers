@@ -55,7 +55,29 @@ margin-left: 32px;
 display: flex;
 
 }
-
+.heroBanner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: auto;
+  width: auto;
+  background-color: #f9f9f9;
+  align-content: space-around;
+  padding: 40px 143px 57px 143px;
+}
+.textHeroBanner h1 {
+  font-size: 24px;
+  font-weight: bold;
+}
+.textHeroBanner h3 {
+  font-weight: normal;
+}
+.imgHeroBanner {
+  justify-self: right;
+  position: relative;
+  height: 60%;
+  width: 70%;
+  object-fit: contain;
+}
 .content {
 width: 500px;
 height: 400px;
@@ -230,4 +252,4 @@ RESPONSIVE del Home Page*/
   .social a {
     display: none;
   }
-}
+
