@@ -95,7 +95,7 @@ a.active {
   cursor: pointer;
 }
 
-/*Inoformación*/
+/*Información*/
 .information {
   display: flex;
   justify-content: space-evenly;
