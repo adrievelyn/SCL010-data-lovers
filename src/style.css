@@ -28,7 +28,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 994px;
+  max-width: 1200px;
   margin: 40px auto;
 }
 .logo {
@@ -95,10 +95,14 @@ a.active {
   cursor: pointer;
 }
 
-/*Inofrmación*/
+/*Inoformación*/
 .information {
   display: flex;
   justify-content: space-evenly;
+}
+.info img {
+  height: 135px;
+  width: auto;
 }
 
 /*Footer*/
@@ -109,9 +113,10 @@ a.active {
 
 .infoFooter {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  padding: 20px 40px;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 40px auto;
 }
 
 .RRSS {
@@ -133,7 +138,8 @@ a.active {
 
 @media (max-width: 1016px) {
   header,
-  .heroBanner {
+  .heroBanner,
+  .infoFooter {
     padding: 20px 40px;
   }
 }
@@ -146,6 +152,10 @@ a.active {
   .textHeroBanner h1 {
     font-size: 14px;
     margin-bottom: 40px;
+  }
+  .button {
+    font-size: 14px;
+    padding: 11px 30px;
   }
 }
 
@@ -175,9 +185,5 @@ a.active {
 @media (max-width: 600px) {
   .social a {
     display: none;
-  }
-  .button {
-    font-size: 14px;
-    padding: 11px 30px;
   }
 }
