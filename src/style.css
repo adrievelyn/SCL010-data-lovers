@@ -1,8 +1,3 @@
-html,
-body {
-  margin: 0px;
-}
-
 :root {
   /*Variables dentro del CSS*/
   /*COLORES*/
@@ -13,6 +8,9 @@ body {
 }
 
 /*Generales*/
+html {
+  margin: 0px;
+}
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
@@ -24,7 +22,7 @@ body {
   margin: 0px;
   padding: 0px;
 }
-/*Header*/
+/*Header (menú)*/
 header {
   display: flex;
   align-items: center;
@@ -51,6 +49,7 @@ a.active {
   display: inline;
   margin-left: 32px;
 }
+/*Termina CSS del header (menú)*/
 
 .banner {
   display: flex;
@@ -85,8 +84,20 @@ a.active {
 .imgHeroBanner img {
   width: 100%;
 }
-
-/*Termina CSS Hero Banner Home Page*/
+.button {
+  border: inherit;
+  font-family: inherit;
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  padding: 11px 80px;
+  background: var(--dark_purple);
+  border-radius: 20px;
+  max-width: 287px;
+  max-height: 51px;
+  cursor: pointer;
+}
+/*Termina CSS del Hero Banner Home Page*/
 
 .content {
   width: 500px;
@@ -133,7 +144,6 @@ align-items: flex-start;
 display: flex;
 justify-content: center;
 justify-content: space-between;
-
 }*/
 
 img {
@@ -160,7 +170,7 @@ img {
   height: 135px;
   width: auto;
 }
-/*Termina Informaciónm HomePage*/
+/*Termina CSS de Información HomePage*/
 
 .brFlag {
   margin-left: 70px;
@@ -214,24 +224,20 @@ td .button,
 }
 
 /*Footer*/
-
 .divBar hr {
   background-color: var(--main_color);
   height: 8px;
 }
-
 .infoFooter {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: 40px auto;
+  max-width: 994px;
+  margin: 20px auto;
 }
-
 .RRSS {
   align-items: center;
 }
-
 .socialRedes {
   display: inline-flex;
   align-items: center;
@@ -245,7 +251,7 @@ td .button,
 }
 /*Termina CSS footer*/
 
-/*RESPONSIVE del Home Page*/
+/*RESPONSIVE del Home Page incluye header y footer*/
 
 @media (max-width: 1016px) {
   header,
