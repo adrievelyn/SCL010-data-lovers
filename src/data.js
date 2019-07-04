@@ -1,10 +1,28 @@
-/* Manejo de data */
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
+// let chFlag = document.getElementById('chFlag');
 
-const example = () => {
-  return 'example';
-};
+// chFlag.addEventListener('click', () => {
+// alert ("hola")
+	
+// });
 
-window.example = example;
+// let brFlag = document.getElementById('brFlag');
+
+// brFlag.addEventListener('click', () => {
+// alert ("hola")
+	
+// });
+
+// let meFlag = document.getElementById('meFlag');
+
+// meFlag.addEventListener('click', () => {
+// alert ("hola")
+	
+// });
+
+// let peFlag = document.getElementById('peFlag');
+
+// peFlag.addEventListener('click', () => {
+// alert ("hola")
+	
+// });
