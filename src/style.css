@@ -115,20 +115,20 @@ img {
 }
 /*estilos a los enlaces con las banderas de los paises*/
 .chFlag {
-margin-left: 100px;
+margin-left: 110px;
 }
 
 .brFlag {
-margin-left: 145px;
+margin-left: 130px;
 }
 
 .meFlag {
-margin-left: 145px;
+margin-left: 155px;
 /*margin-right: 150px;
 */} 
 
 .peFlag {
-	margin-left: 150px;
+	margin-left: 165px;
 	margin-right: 250px
 }
 
