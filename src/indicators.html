@@ -11,6 +11,10 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"
+    />
   </head>
   <body>
     <!-- Header de la página web, incluye logo y el menú de inicio y países-->
@@ -29,6 +33,8 @@
     <select id="indicatorsSelect">
       <option value=""> </option>
     </select>
+
+    <canvas id="myChart" width="400" height="100"></canvas>
 
     <!--Sección para el footer-->
     <section class="footer">
@@ -54,6 +60,7 @@
       </div>
     </section>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>

@@ -11,12 +11,34 @@ const brasilData = WORLDBANK.BRA;
 var urlParams = new URLSearchParams(window.location.search);
 let selectCountry = urlParams.get("country");
 console.log(selectCountry);
-
-for (let i = 0; i < chileData.indicators.length; i++) {
-  //   console.log(chileData.indicators[i].indicatorName);
-  let indicatorSelect = document.getElementById("indicatorsSelect");
-  let option = document.createElement("option");
-  option.value = chileData.indicators[i].indicatorName;
-  option.text = chileData.indicators[i].indicatorName;
-  indicatorSelect.add(option);
+let selectedData;
+switch (selectCountry) {
+  case "chile":
+    selectedData = chileData;
+    break;
+  case "peru":
+    selectedData = peruData;
+    break;
+  case "mexico":
+    selectedData = mexicoData;
+    break;
+  case "brasil":
+    selectedData = brasilData;
+    break;
 }
+
+for (let i = 0; i < selectedData.indicators.length; i++) {
+  let indicatorList = document.getElementById("indicatorsSelect");
+  let option = document.createElement("option");
+  option.value = i;
+  option.text = selectedData.indicators[i].indicatorName;
+  indicatorList.add(option);
+}
+
+let selectIndicator;
+document.getElementById("indicatorsSelect").addEventListener("change", () => {
+  selectIndicator = document.getElementById("indicatorsSelect").value;
+  mostrarIndicador();
+});
+
+var graphPlaceholder = document.getElementById("myChart").getContext("2d");
