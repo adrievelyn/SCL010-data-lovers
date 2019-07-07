@@ -1,28 +1,38 @@
+/* Manejo de data */
 
-// let chFlag = document.getElementById('chFlag');
+function mostrarIndicador() {
+ console.log(selectIndicator);
+ console.log(selectedData.indicators[selectIndicator]);
 
-// chFlag.addEventListener('click', () => {
-// alert ("hola")
-	
-// });
+ // Inicializamos los arreglos vacios.
+ let arrayToChart = [];
+ let labelArray = [];
+ let indicatorNumber = selectIndicator;
 
-// let brFlag = document.getElementById('brFlag');
+ // Estructura repetitiva para generar los puntos del gráfico en arreglo de objetos, a partir de la data.
+ for (let year in selectedData.indicators[indicatorNumber].data) {
+   if (selectedData.indicators[indicatorNumber].data[year] === "") {
+     selectedData.indicators[indicatorNumber].data[year] = 0;
+   }
+   // Agregando al arreglo de los valores
+   arrayToChart.push(selectedData.indicators[indicatorNumber].data[year]);
+   // Agregando al arreglo de los años
+   labelArray.push(year);
+ }
+ console.table(arrayToChart);
 
-// brFlag.addEventListener('click', () => {
-// alert ("hola")
-	
-// });
+ // Generando el Gráfico
+ var chart = new Chart(graphPlaceholder, {
+   type: "line",
+   data: {
+     labels: labelArray,
+     datasets: [
+       {
+         label: selectedData.indicators[indicatorNumber].indicatorName,
+         data: arrayToChart
+       }
+     ]
+   }
+ });
+}
 
-// let meFlag = document.getElementById('meFlag');
-
-// meFlag.addEventListener('click', () => {
-// alert ("hola")
-	
-// });
-
-// let peFlag = document.getElementById('peFlag');
-
-// peFlag.addEventListener('click', () => {
-// alert ("hola")
-	
-// });
