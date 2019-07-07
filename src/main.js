@@ -71,6 +71,7 @@ function mostrarIndicador() {
    if (selectedData.indicators[indicatorNumber].data[year] === "") {
      selectedData.indicators[indicatorNumber].data[year] = 0;
    }
+
    // Agregando al arreglo de los valores
    arrayToChart.push(selectedData.indicators[indicatorNumber].data[year]);
    // Agregando al arreglo de los años
@@ -101,7 +102,7 @@ function addText(chart) {
   // alert(cx+"  " +cy);
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.font = '14px verdana';
+  ctx.font = 'Roboto';
   ctx.fillStyle = 'black';
   ctx.fillText("Text Here", cx, cy);
 
@@ -120,17 +121,20 @@ function showDoughnutMaxValue() {
    }
 	}
 	minValue = 100 - maxValue;
-	// alert(minValue);
-	// alert(maxValue);
+
 	var chart = document.getElementById('doughnutMax').getContext('2d');
-	chart.font="36px verdana";
-	chart.fillText("76",150,100);
+	var cx = chart.width / 2;
+  var cy = chart.height / 2;
+	chart.textAlign = 'center';
+  chart.textBaseline = 'middle';
+	chart.font="Roboto";
+	chart.fillText("76",cx,cy);
 var config = {
 			type: 'doughnut',
 			data: {
 				datasets: [{
 					data: [maxValue,minValue],
-					backgroundColor: ['#6b48ff','#f9f9f9'],
+					backgroundColor: ['#6b48ff','darkgray'],
 				}],
 
 			},
@@ -185,7 +189,7 @@ var config = {
 			data: {
 				datasets: [{
 					data: [average,minValue],
-					backgroundColor: ['#6b48ff','#f9f9f9'],
+					backgroundColor: ['#6b48ff','darkgray'],
 				}],
 
 			},
@@ -213,4 +217,5 @@ var config = {
 
 	var doughnutMax = new Chart(chart, config);
 }
+
 

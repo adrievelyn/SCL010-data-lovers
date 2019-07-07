@@ -1,4 +1,4 @@
-* {
+html {
 margin: 0px;
 }
 
@@ -17,7 +17,7 @@ font-family: "Roboto", sans-serif;
 font-size: 16px;
 color: var(--dark_blue);
 font-weight: normal;
-font-style: normal;
+font-style: normal; 
 font-stretch: normal;
 letter-spacing: normal;
 margin: 0px;
@@ -51,14 +51,57 @@ display: inline;
 margin-left: 32px;
 }
 
-nav .banner {
+.banner {
 display: flex;
 
 }
+/*Hero Banner Home Page*/
+.heroBanner {
+ display: flex;
+ align-items: center;
+ justify-content: space-evenly;
+ background-color: #f9f9f9;
+ padding: 46px 0;
+ margin-bottom: 40px;
+}
+.textHeroBanner {
+ flex: 1;
+ max-width: 460px;
+}
+.textHeroBanner h1 {
+ font-size: 24px;
+ font-weight: bold;
+}
+.textHeroBanner h3 {
+ font-weight: normal;
+ margin-bottom: 80px;
+}
+.imgHeroBanner {
+ flex: 1;
+ max-width: 310px;
+}
+
+.imgHeroBanner img {
+ width: 100%;
+}
+.button {
+ border: inherit;
+ font-family: inherit;
+ text-align: center;
+ font-size: 24px;
+ color: white;
+ padding: 11px 80px;
+ background: var(--dark_purple);
+ border-radius: 20px;
+ max-width: 287px;
+ max-height: 51px;
+ cursor: pointer;
+}
+/*Termina CSS del Hero Banner Home Page*/
 
 div .content {
 width: 800px;
-height: 400px;
+height: 300px;
 font-family: Roboto;
 font-size: 20px;
 font-weight: normal;
@@ -78,14 +121,15 @@ height: 300px;
 margin-right: 221px;
 margin-left: 90px;
 display: flex;
+background: #179387;
 }
 
-nav div .social {
-height: 150px;
+.social {
+height: 100px;
 }
 /*estilo texto*/
 .countries {
-padding-top: 10px;
+padding-top: 70px;
 align-items: flex-start;
 display: flex;
 justify-content: center;
@@ -94,7 +138,6 @@ justify-content: space-between;
  border-collapse: separate;
  border-spacing: 6px;
  margin-left: 150px;
-
 
 }
 
@@ -119,11 +162,11 @@ margin-left: 110px;
 }
 
 .brFlag {
-margin-left: 130px;
+margin-left: 145px;
 }
 
 .meFlag {
-margin-left: 175px;
+margin-left: 155px;
 /*margin-right: 150px;
 */} 
 
@@ -134,22 +177,20 @@ margin-left: 175px;
 
 .conex {
  display: flex;
-margin-bottom: 300px;
-margin-top: 30px;
-
-
-/* max-width: 30px;
- max-height: 500px;*/
+ margin: 30px auto;
 }
+
+
+
 /*conexiones a href*/
-div .conexCh, .conexBr, .conexMe, .conexPe {
+div .conexCh, .conexBr, .conexPe {
  border: inherit;
  font-family: inherit;
  text-align: center;
  font-size: 18px;
  color: white;
- padding: 20px 60px;
- background: var(--dark_purple);
+ padding: 15px 40px;
+ background: darkgray;
  border-radius: 20px;
  align-items: flex-start;
 
@@ -157,31 +198,53 @@ div .conexCh, .conexBr, .conexMe, .conexPe {
 
 /*estilos a los enlaces a href de cada pais*/
 .conexCh {
-margin-left: 221px;
+margin-left: 245px;
 text-align: center;
 }
 
 .conexBr {
-margin-left: 80px;
+margin-left: 85px;
 text-align: center;
 }
 
 .conexMe {
-margin-left: 110px;
-margin-right: 100px;
+margin-left: 95px;
+margin-right: 115px;
 text-align: center;
+border: inherit;
+ font-family: inherit;
+ text-align: center;
+ font-size: 18px;
+ color: white;
+ padding: 15px 30px;
+ background: darkgray;
+ border-radius: 20px;
+ align-items: flex-start;
+
 }
 
 .conexPe {
-margin-right: 220px;
+margin-right: 230px;
 text-align: center;
 }
 
 .banner, .conex {
 justify-content: space-between;
 
+}
 
+/*linea divisoria entre footer resto del contenido*/
+.Path-113 {
+  width: 100%;
+  height: 8px;
+  object-fit: contain;
+  background-color: #179387;
+  border: 0px;
 
+}
+
+a:hover {
+background: #6b48ff;
 }
 /*
 .button {
@@ -189,53 +252,51 @@ justify-content: space-between;
 	margin-bottom: 0px;
 
 }*/
+/*Informaciónm HomePage*/
+.information {
+ display: flex;
+ justify-content: space-evenly;
+}
+.info img {
+ height: 135px;
+ width: auto;
+}
+/*Termina CSS de Información HomePage*/
+
 <div class="startButton">
          <a class="button" href="countries.html">COMENZAR</a>
        </div>
 
        /*Footer*/
 .divBar hr {
-  background-color: var(--main_color);
-  height: 8px;
+ background-color: var(--main_color);
+ height: 8px;
 }
-
 .infoFooter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 40px auto;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ max-width: 994px;
+ margin: 20px auto;
 }
-
 .RRSS {
-  align-items: center;
+ align-items: center;
 }
+.socialRedes {
+ display: inline-flex;
+ align-items: center;
+}
+.socialRedes img {
+ width: 36px;
+ padding-left: 54px;
+}
+.socialRedes a {
+ padding-left: 10px;
+}
+/*Termina CSS footer*/
 
-#donas {
-  width: 100%;
-  height: 20%;
-}
-#leftDona {
-  width: 50%;
-  float: left;
-}
-#rightDona {
-  width: 50%;
-  float: right;
-}
-/*.social {
-  display: inline-flex;
-  align-items: center;
-}
-.social img {
-  width: 36px;
-  padding-left: 54px;
-}
-.social a {
-  padding-left: 10px;
-}
-/**/
-RESPONSIVE del Home Page*/
+/*RESPONSIVE del Home Page incluye header y footer*/
+
 
 @media (max-width: 1016px) {
   header,
@@ -270,4 +331,18 @@ RESPONSIVE del Home Page*/
 /*RESPONSIVE 2da Página*/
 
 
+/*estilo donas con valor máximo y promedio*/
+div #donas; {
+  height: 10%;
+  background: transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-160/so1.png) no-repeat center center;
+
+}
+div #leftDona {
+  width: 50%;
+  float: left;
+}
+div #rightDona {
+  width: 50%;
+  float: right;
+}
 
