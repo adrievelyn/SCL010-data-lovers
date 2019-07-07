@@ -92,15 +92,15 @@ function mostrarIndicador() {
    }
  });
 }
-function addText() {
+function addText(chart) {
 
-  var canvas = document.getElementById("doughnutMax");
-  var ctx = document.getElementById("doughnutMax").getContext("2d");
-
+  var canvas = document.getElementById(chart);
+  var ctx = document.getElementById(chart).getContext("2d");
   var cx = canvas.width / 2;
   var cy = canvas.height / 2;
-  // ctx.textAlign = 'center';
-  // ctx.textBaseline = 'middle';
+  // alert(cx+"  " +cy);
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
   ctx.font = '14px verdana';
   ctx.fillStyle = 'black';
   ctx.fillText("Text Here", cx, cy);
@@ -123,7 +123,8 @@ function showDoughnutMaxValue() {
 	// alert(minValue);
 	// alert(maxValue);
 	var chart = document.getElementById('doughnutMax').getContext('2d');
-
+	chart.font="36px verdana";
+	chart.fillText("76",150,100);
 var config = {
 			type: 'doughnut',
 			data: {
@@ -134,9 +135,9 @@ var config = {
 
 			},
 			options: {
-				cutoutPercentage: 88,
+				cutoutPercentage: 80,
 				responsive: true,
-				onAnimationComplete: addText(),
+				onAnimationComplete: addText('doughnutMax'),
 				legend: {
 					position: 'top',
 				},
@@ -156,7 +157,9 @@ var config = {
 		};
 
 	var doughnutMax = new Chart(chart, config);
-}
+
+
+	}
 
 // Agrenado dona con valor promedio
 function showDoughnutAverageValue() {
@@ -187,9 +190,9 @@ var config = {
 
 			},
 			options: {
-				cutoutPercentage: 88,
+				cutoutPercentage: 80,
 				responsive: true,
-				onAnimationComplete: addText(),
+				onAnimationComplete: addText('doughnutAverages'),
 				legend: {
 					position: 'top',
 				},
