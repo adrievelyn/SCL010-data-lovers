@@ -162,7 +162,7 @@ margin-left: 110px;
 }
 
 .brFlag {
-margin-left: 145px;
+margin-left: 155px;
 }
 
 .meFlag {
@@ -189,7 +189,7 @@ div .conexCh, .conexBr, .conexPe {
  text-align: center;
  font-size: 18px;
  color: white;
- padding: 15px 40px;
+ padding: 10px 45px;
  background: darkgray;
  border-radius: 20px;
  align-items: flex-start;
@@ -198,12 +198,12 @@ div .conexCh, .conexBr, .conexPe {
 
 /*estilos a los enlaces a href de cada pais*/
 .conexCh {
-margin-left: 245px;
+margin-left: 240px;
 text-align: center;
 }
 
 .conexBr {
-margin-left: 85px;
+margin-left: 100px;
 text-align: center;
 }
 
@@ -216,7 +216,7 @@ border: inherit;
  text-align: center;
  font-size: 18px;
  color: white;
- padding: 15px 30px;
+ padding: 10px 35px;
  background: darkgray;
  border-radius: 20px;
  align-items: flex-start;
