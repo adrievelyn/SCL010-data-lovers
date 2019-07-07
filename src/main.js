@@ -11,19 +11,36 @@ const brasilData = WORLDBANK.BRA;
 var urlParams = new URLSearchParams(window.location.search);
 let selectCountry = urlParams.get("country");
 console.log(selectCountry);
+
 let selectedData;
 switch (selectCountry) {
   case "chile":
     selectedData = chileData;
+    document.getElementById("bannerImg").classList.add("chileBanner");
+    document
+      .getElementById("bannerText")
+      .appendChild(document.createTextNode("Chile"));
     break;
   case "peru":
     selectedData = peruData;
+    document.getElementById("bannerImg").classList.add("peruBanner");
+    document
+      .getElementById("bannerText")
+      .appendChild(document.createTextNode("Perú"));
     break;
   case "mexico":
     selectedData = mexicoData;
+    document.getElementById("bannerImg").classList.add("mexicoBanner");
+    document
+      .getElementById("bannerText")
+      .appendChild(document.createTextNode("México"));
     break;
   case "brasil":
     selectedData = brasilData;
+    document.getElementById("bannerImg").classList.add("brasilBanner");
+    document
+      .getElementById("bannerText")
+      .appendChild(document.createTextNode("Brasil"));
     break;
 }
 

@@ -9,16 +9,14 @@ function mostrarIndicador() {
   let labelArray = [];
   let indicatorNumber = selectIndicator;
 
-  // Todo Investigar for para objetos.
-  for (let key in selectedData.indicators[indicatorNumber].data) {
-    if (selectedData.indicators[indicatorNumber].data[key] === "") {
-      selectedData.indicators[indicatorNumber].data[key] = 0;
+  // Estructura repetitiva para generar los puntos del gráfico en arreglo de objetos, a partir de la data.
+  for (let year in selectedData.indicators[indicatorNumber].data) {
+    if (selectedData.indicators[indicatorNumber].data[year] !== "") {
+      // Agregando al arreglo de los valores
+      arrayToChart.push(selectedData.indicators[indicatorNumber].data[year]);
+      // Agregando al arreglo de los años
+      labelArray.push(year);
     }
-
-    // Agregando al arreglo de los valores
-    arrayToChart.push(selectedData.indicators[indicatorNumber].data[key]);
-    // Agregando al arreglo de los años
-    labelArray.push(key);
   }
   console.table(arrayToChart);
 
@@ -30,7 +28,10 @@ function mostrarIndicador() {
       datasets: [
         {
           label: selectedData.indicators[indicatorNumber].indicatorName,
-          data: arrayToChart
+          data: arrayToChart,
+          borderColor: "#6B48FF",
+          pointBackgroundColor: "#91CAC5",
+          backgroundColor: "#F9F9F9"
         }
       ]
     }

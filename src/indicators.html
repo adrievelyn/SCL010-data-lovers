@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Social Data</title>
-    <link href="images/logo2.png" rel="shortcut icon" />
+    <link href="images/socialdata-logo.png" rel="shortcut icon" />
     <link rel="stylesheet" href="style.css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
@@ -20,7 +20,7 @@
     <!-- Header de la página web, incluye logo y el menú de inicio y países-->
     <header>
       <div class="imgLogo">
-        <img class="logo" src="images/logo2.png" alt="logo" />
+        <img class="logo" src="images/socialdata-logo.png" alt="logo" />
       </div>
       <div class="menu">
         <ul>
@@ -30,18 +30,28 @@
       </div>
     </header>
 
-    <select id="indicatorsSelect">
-      <option value=""> </option>
-    </select>
+    <!--Sección banner dinámico-->
+    <section class="bannerIndicators">
+      <div id="bannerImg" class="bannerImg">
+        <div id="bannerText" class="bannerText"></div>
+      </div>
+    </section>
+
+    <!--Sección del selector de indicadores-->
+    <section class="indSelect">
+      <h3>Selecciona el indicador:</h3>
+      <select class="indicatorsSelect" id="indicatorsSelect">
+        <option value=""> </option>
+      </select>
+    </section>
 
     <canvas id="myChart" width="400" height="100"></canvas>
 
     <!--Sección para el footer-->
     <section class="footer">
-      <div class="divBar"><hr /></div>
       <div class="infoFooter">
         <div class="imgLogo">
-          <img class="logo" src="images/logo2.png" alt="logo" />
+          <img class="logo" src="images/socialdata-logo-white.png" alt="logo" />
         </div>
         <div class="RRSS">
           <div class="socialRedes">
