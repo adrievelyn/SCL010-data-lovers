@@ -1,8 +1,7 @@
 /* Manejo de data */
 
 // CREACIÓN GRÁFICO DE LÍNEAS PARA LA DATA:
-
-function mostrarIndicador() {
+const mostrarIndicador = () => {
   console.log(selectIndicator);
   console.log(selectedData.indicators[selectIndicator]);
 
@@ -39,7 +38,7 @@ function mostrarIndicador() {
       ]
     }
   });
-}
+};
 
 //Agregando dona con el valor maximo
 function showDoughnutMaxValue() {
