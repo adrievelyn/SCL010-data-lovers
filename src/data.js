@@ -23,6 +23,7 @@ function mostrarIndicador() {
   // Generando el Gráfico
   var chart = new Chart(graphPlaceholder, {
     type: "line",
+    maintainAspectRatio: false,
     data: {
       labels: labelArray,
       datasets: [

@@ -58,4 +58,6 @@ document.getElementById("indicatorsSelect").addEventListener("change", () => {
   mostrarIndicador();
 });
 
-var graphPlaceholder = document.getElementById("myChart").getContext("2d");
+var graphPlaceholder = document
+  .getElementById("indicatorsChart")
+  .getContext("2d");
