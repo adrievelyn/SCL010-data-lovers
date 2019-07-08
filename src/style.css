@@ -227,6 +227,7 @@ td .button,
 /*Banner dinámico*/
 .bannerIndicators {
   margin-bottom: 40px;
+  position: relative;
 }
 .bannerText {
   position: absolute;
@@ -235,13 +236,23 @@ td .button,
   color: white;
   top: 30%;
   padding-left: 143px;
+  z-index: 3;
+}
+
+.bannerOpacity {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.15);
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
 }
 .bannerImg {
   height: 180px;
   width: 100%;
   background-size: cover;
   background-position: center center;
-  opacity: 0.7;
+  z-index: 1;
 }
 
 .chileBanner {
@@ -266,9 +277,8 @@ td .button,
   background: transparent;
   border: none;
   font-size: 14px;
-  padding: 0px 143px;
-  width: 994px;
-  height: 38.3px;
+  width: 100%;
+  height: 38px;
   border-radius: 4px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
   border: solid 1px #d7dae2;
@@ -302,9 +312,12 @@ td .button,
 .socialRedes img {
   width: 36px;
   padding-left: 54px;
+  padding-right: 10px;
 }
 .socialRedes a {
   padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 /*Termina CSS footer*/
 
