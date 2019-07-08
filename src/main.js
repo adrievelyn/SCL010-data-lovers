@@ -93,20 +93,8 @@ function mostrarIndicador() {
    }
  });
 }
-function addText(chart) {
 
-  var canvas = document.getElementById(chart);
-  var ctx = document.getElementById(chart).getContext("2d");
-  var cx = canvas.width / 2;
-  var cy = canvas.height / 2;
-  // alert(cx+"  " +cy);
-  ctx.textAlign = 'center';
-  ctx.textBaseline = 'middle';
-  ctx.font = 'Roboto';
-  ctx.fillStyle = 'black';
-  ctx.fillText("Text Here", cx, cy);
 
-}
 //Agregando dona con el valor maximo
 function showDoughnutMaxValue() {
 	let indicatorNumber = selectIndicator;
@@ -115,55 +103,49 @@ function showDoughnutMaxValue() {
 	for (let year in selectedData.indicators[indicatorNumber].data) {
 		if (selectedData.indicators[indicatorNumber].data[year] != "") {
      if (selectedData.indicators[indicatorNumber].data[year] > maxValue) {
-     		console.log(selectedData.indicators[indicatorNumber].data[year]+" es mayor "+maxValue);
+     		// console.log(selectedData.indicators[indicatorNumber].data[year]+" es mayor "+maxValue);
      	 maxValue = selectedData.indicators[indicatorNumber].data[year]
      }
    }
 	}
 	minValue = 100 - maxValue;
-
 	var chart = document.getElementById('doughnutMax').getContext('2d');
-	var cx = chart.width / 2;
-  var cy = chart.height / 2;
-	chart.textAlign = 'center';
-  chart.textBaseline = 'middle';
-	chart.font="Roboto";
-	chart.fillText("76",cx,cy);
-var config = {
-			type: 'doughnut',
-			data: {
-				datasets: [{
-					data: [maxValue,minValue],
-					backgroundColor: ['#6b48ff','darkgray'],
-				}],
+	// var cx = chart.width / 2;
+ // 	var cy = chart.height / 2;
+	// chart.textAlign = 'center';
+ //  chart.textBaseline = 'middle';
+	// chart.font="Roboto";
+	// chart.fillText(minValue,cx,cy);
 
-			},
-			options: {
-				cutoutPercentage: 80,
-				responsive: true,
-				onAnimationComplete: addText('doughnutMax'),
-				legend: {
-					position: 'top',
-				},
-				tooltips: {
-            enabled: false
-        },
-				title: {
-					display: true,
-					text: 'Valor Maximo',
-					position: 'bottom'
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
-		};
+	var config = {
+		type: 'doughnut',
+		data: {
+			datasets: [{
+				data: [maxValue,minValue],
+				backgroundColor: ['#6b48ff','darkgray'],
+			}],
 
+		},
+		options: {
+			cutoutPercentage: 80,
+      plugins: {
+        doughnutlabel: {
+          labels: [
+            {
+              text: maxValue+"%",
+              font: {
+                size: '50'
+              },
+              color: 'grey'
+            },
+          ]
+        }
+      }
+		}
+	};
 	var doughnutMax = new Chart(chart, config);
+}
 
-
-	}
 
 // Agrenado dona con valor promedio
 function showDoughnutAverageValue() {
@@ -194,28 +176,21 @@ var config = {
 
 			},
 			options: {
-				cutoutPercentage: 80,
-				responsive: true,
-				onAnimationComplete: addText('doughnutAverages'),
-				legend: {
-					position: 'top',
-				},
-				tooltips: {
-            enabled: false
-        },
-				title: {
-					display: true,
-					text: 'Valor Promedio',
-					position: 'bottom'
-				},
-				animation: {
-					animateScale: true,
-					animateRotate: true
-				}
-			}
+        cutoutPercentage: 80,
+        plugins: {
+          doughnutlabel: {
+            labels: [
+              {
+                text: average+"%",
+                font: {
+                  size: '50'
+                },
+                color: 'grey'
+              },
+            ]
+          }
+        }
+      }
 		};
-
 	var doughnutMax = new Chart(chart, config);
 }
-
-
