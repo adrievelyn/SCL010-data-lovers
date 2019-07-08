@@ -127,6 +127,19 @@ function showDoughnutMaxValue() {
 
 		},
 		options: {
+      layout: {
+            padding: {
+                left: 640,
+                right: 0,
+                top: 0,
+                bottom: 0
+            }
+        },
+      title: {
+        display: true,
+        text: 'Valor Maximo',
+        position: 'bottom'
+      },
 			cutoutPercentage: 80,
       plugins: {
         doughnutlabel: {
@@ -177,6 +190,19 @@ var config = {
 			},
 			options: {
         cutoutPercentage: 80,
+      layout: {
+            padding: {
+                left: 0,
+                right: 640,
+                top: 0,
+                bottom: 0
+            }
+        },
+        title: {
+          display: true,
+          text: 'Valor Promedio',
+          position: 'bottom'
+        },
         plugins: {
           doughnutlabel: {
             labels: [

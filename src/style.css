@@ -1,7 +1,3 @@
-html {
-margin: 0px;
-}
-
 :root {
 /*Variables dentro del CSS*/
 /*COLORES*/
@@ -9,9 +5,14 @@ margin: 0px;
 --main_color: #179387;
 --dark_purple: #6b48ff;
 --dark_blue: #0d3f67;
+--medium_green: #91CAC5;
+--light_green: #DCEFED;
 }
 
 /*Generales*/
+html {
+ margin: 0px;
+}
 body {
 font-family: "Roboto", sans-serif;
 font-size: 16px;
@@ -23,7 +24,7 @@ letter-spacing: normal;
 margin: 0px;
 padding: 0px;
 }
-/*Header*/
+/*Header (menú)*/
 header {
 display: flex;
 align-items: center;
@@ -50,6 +51,7 @@ list-style: none;
 display: inline;
 margin-left: 32px;
 }
+/*Termina CSS del header (menú)*/
 
 .banner {
 display: flex;
@@ -100,8 +102,8 @@ display: flex;
 /*Termina CSS del Hero Banner Home Page*/
 
 div .content {
-width: 800px;
-height: 300px;
+width: 530px;
+height: 270px;
 font-family: Roboto;
 font-size: 20px;
 font-weight: normal;
@@ -110,26 +112,25 @@ font-stretch: normal;
 line-height: 1.3;
 letter-spacing: normal;
 color: #0d3f67;
+/*margin-left: 221px;*/
 margin-left: 221px;
 padding-top: 10px;
 display: flex;
 }
 /*estilo imagen*/
 div .banner, .social {
-width: 700px;
-height: 300px;
-margin-right: 221px;
-margin-left: 90px;
+  width: 450px; 
+height: 240px;
+/*margin-left: 221px;*/
+margin: auto;
+margin-right: 220px;
 display: flex;
 background: #179387;
 }
 
-.social {
-height: 100px;
-}
-/*estilo texto*/
+    
 .countries {
-padding-top: 70px;
+padding-top: 30px;
 align-items: flex-start;
 display: flex;
 justify-content: center;
@@ -141,22 +142,10 @@ justify-content: space-between;
 
 }
 
-/*.conex {
-background: white;
-color: black;
-height: 600px;
-align-items: flex-start;
-display: flex;
-justify-content: center;
-justify-content: space-between;
-
-}*/
-
 img {
  height: auto;
  max-width: 100%;
 }
-/*estilos a los enlaces con las banderas de los paises*/
 .chFlag {
 margin-left: 110px;
 }
@@ -190,13 +179,11 @@ div .conexCh, .conexBr, .conexPe {
  font-size: 18px;
  color: white;
  padding: 10px 45px;
- background: darkgray;
+ background: #91CAC5;
  border-radius: 20px;
  align-items: flex-start;
 
 }
-
-/*estilos a los enlaces a href de cada pais*/
 .conexCh {
 margin-left: 240px;
 text-align: center;
@@ -208,7 +195,7 @@ text-align: center;
 }
 
 .conexMe {
-margin-left: 95px;
+margin-left: 100px;
 margin-right: 115px;
 text-align: center;
 border: inherit;
@@ -217,7 +204,7 @@ border: inherit;
  font-size: 18px;
  color: white;
  padding: 10px 35px;
- background: darkgray;
+ background: #91CAC5;
  border-radius: 20px;
  align-items: flex-start;
 
@@ -233,17 +220,8 @@ justify-content: space-between;
 
 }
 
-/*linea divisoria entre footer resto del contenido*/
-.Path-113 {
-  width: 100%;
-  height: 8px;
-  object-fit: contain;
-  background-color: #179387;
-  border: 0px;
-
-}
-
-a:hover {
+/*aplicación del hover en (a href)*/
+.conex a:hover {
 background: #6b48ff;
 }
 /*
@@ -255,13 +233,70 @@ background: #6b48ff;
 /*Informaciónm HomePage*/
 .information {
  display: flex;
- justify-content: space-evenly;
+ justify-content: space-between;
 }
 .info img {
  height: 135px;
  width: auto;
 }
 /*Termina CSS de Información HomePage*/
+
+/*Banner dinámico*/
+.bannerIndicators {
+ margin-bottom: 40px;
+}
+.bannerText {
+ position: absolute;
+ font-size: 60px;
+ font-weight: bold;
+ color: white;
+ top: 30%;
+ padding-left: 143px;
+}
+.bannerImg {
+ height: 180px;
+ width: 100%;
+ background-size: cover;
+ background-position: center center;
+ opacity: 0.7;
+}
+
+.chileBanner {
+ background-image: url(images/chile-banner.jpg);
+}
+
+.peruBanner {
+ background-image: url(images/peru-banner.jpg);
+}
+
+.mexicoBanner {
+ background-image: url(images/mexico-banner.jpg);
+}
+
+.brasilBanner {
+ background-image: url(images/brasil-banner.jpg);
+}
+/*Termina CSS del Banner de indicadores*/
+
+/*Select dentro de la página indicators*/
+.indicatorsSelect {
+ background: transparent;
+ border: none;
+ font-size: 14px;
+ padding: 0px 143px;
+ width: 994px;
+ height: 38.3px;
+ border-radius: 4px;
+ box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+ border: solid 1px #d7dae2;
+ background-color: #ffffff;
+}
+.indSelect {
+ display: flex;
+ flex-direction: column;
+ padding: 0 143px;
+}
+/*Termina CSS del select dentro de la página indicators*/
 
 <div class="startButton">
          <a class="button" href="countries.html">COMENZAR</a>
@@ -272,17 +307,25 @@ background: #6b48ff;
  background-color: var(--main_color);
  height: 8px;
 }
+/*Footer*/
+.footer {
+ background-color: var(--main_color);
+ padding: 10px 0px;
+}
+
 .infoFooter {
  display: flex;
  align-items: center;
- justify-content: space-between;
- max-width: 994px;
- margin: 20px auto;
+ justify-content: space-around;
+/* max-width: 994px;
+ margin: 20px auto;*/
+
 }
 .RRSS {
  align-items: center;
 }
 .socialRedes {
+color: white;
  display: inline-flex;
  align-items: center;
 }
@@ -295,54 +338,89 @@ background: #6b48ff;
 }
 /*Termina CSS footer*/
 
+
+
+#doughnuts {
+  width: 100%;
+}
+#leftDoughnut {
+  width: 50%;
+  float: left;
+}
+#rightDoughnut {
+  width: 50%;
+  float: right;
+}
+/*Termina CSS para donas 3era página*/
+
+
 /*RESPONSIVE del Home Page incluye header y footer*/
 
 
 @media (max-width: 1016px) {
   header,
+  .heroBanner,
   .infoFooter {
     padding: 20px 40px;
   }
 }
 
 @media (max-width: 440px) {
-  .button {
-    font-size: 14px;
-    padding: 11px 30px;
-  }
+  .textHeroBanner h3 {
+   display: none;
+ }
+
+ .textHeroBanner h1 {
+   font-size: 14px;
+   margin-bottom: 40px;
+ }
+
+ .button {
+   font-size: 14px;
+   padding: 11px 30px;
+ }
 }
 
-@media (max-width: 340px) {
-  .menu ul li {
-    margin-left: 25px;
-  }
-  .menu ul {
-    padding: 0;
-  }
+media (max-width: 340px) {
+ .menu ul li {
+   margin-left: 25px;
+ }
+ .menu ul {
+   padding: 0;
+ }
 }
 
+@media (max-width: 700px) {
+ .information {
+   flex-direction: column;
+   align-items: center;
+ }
+ .info {
+   margin-bottom: 20px;
+   align-items: center;
+ }
+ .info img {
+   max-width: 155px;
+ }
+}
 
 @media (max-width: 600px) {
-  .social a {
-    display: none;
+ .socialRedes a {
+   display: none;
+ }
+}
+
+@media (max-width: 440px) {
+  .banner, .countries {
+  flex-direction: column;
+  }
+  .conex, {
+
   }
 }
 
-/*RESPONSIVE 2da Página*/
 
 
 /*estilo donas con valor máximo y promedio*/
-div #donas; {
-  height: 10%;
-  background: transparent url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-160/so1.png) no-repeat center center;
 
-}
-div #leftDona {
-  width: 50%;
-  float: left;
-}
-div #rightDona {
-  width: 50%;
-  float: right;
-}
 
