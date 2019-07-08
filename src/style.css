@@ -410,14 +410,7 @@ media (max-width: 340px) {
  }
 }
 
-@media (max-width: 440px) {
-  .banner, .countries {
-  flex-direction: column;
-  }
-  .conex, {
 
-  }
-}
 
 
 

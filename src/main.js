@@ -137,7 +137,7 @@ function showDoughnutMaxValue() {
         },
       title: {
         display: true,
-        text: 'Valor Maximo',
+        text: 'Valor Máximo',
         position: 'bottom'
       },
 			cutoutPercentage: 80,
@@ -147,7 +147,7 @@ function showDoughnutMaxValue() {
             {
               text: maxValue+"%",
               font: {
-                size: '50'
+                size: '100'
               },
               color: 'grey'
             },
@@ -209,7 +209,7 @@ var config = {
               {
                 text: average+"%",
                 font: {
-                  size: '50'
+                  size: '100'
                 },
                 color: 'grey'
               },
