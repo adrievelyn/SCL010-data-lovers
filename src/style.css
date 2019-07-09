@@ -221,7 +221,7 @@ div .conexCh,
 }
 /*Termina CSS de Información HomePage*/
 
-/*Banner dinámico*/
+/*Banner dinámico página indicadores*/
 .bannerIndicators {
   margin-bottom: 40px;
   position: relative;
@@ -262,7 +262,7 @@ div .conexCh,
 .brasilBanner {
   background-image: url(images/brasil-banner.jpg);
 }
-/*Termina CSS del Banner de indicadores*/
+/*Termina CSS del Banner dinámico página de indicadores*/
 
 /*Select dentro de la página indicators*/
 .indicatorsSelect {
@@ -320,8 +320,8 @@ div .conexCh,
 
 /* Gráfico de línea de los indicadores */
 .indicatorsChart {
-  max-height: 260px;
-  max-width: 630px;
+  max-height: 350px;
+  max-width: 100%;
 }
 .chartContainer {
   display: flex;

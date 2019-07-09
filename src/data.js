@@ -21,7 +21,6 @@ window.data = {
         labelArray.push(year);
       }
     }
-    // console.table(arrayToChart);
 
     // Generando el Gráfico
     // eslint-disable-next-line no-undef
@@ -41,28 +40,36 @@ window.data = {
         ]
       }
     });
+
+    // console.table(arrayToChart);
+    return { arrayToChart, labelArray };
   },
 
   //Agregando dona con el valor maximo
   showDoughnutMaxValue(selectIndicator, selectedData, chartMax) {
     let indicatorNumber = selectIndicator;
-    let maxValue = 0;
-    let difValue = 0;
+    let maxValueOfIndicator = 0;
+    let maxValueDifference = 0;
     for (let year in selectedData.indicators[indicatorNumber].data) {
       if (selectedData.indicators[indicatorNumber].data[year] !== "") {
-        if (selectedData.indicators[indicatorNumber].data[year] > maxValue) {
-          maxValue = selectedData.indicators[indicatorNumber].data[year];
+        if (
+          selectedData.indicators[indicatorNumber].data[year] >
+          maxValueOfIndicator
+        ) {
+          maxValueOfIndicator = parseFloat(
+            selectedData.indicators[indicatorNumber].data[year]
+          ).toFixed("2");
         }
       }
     }
-    difValue = 100 - maxValue;
+    maxValueDifference = 100 - maxValueOfIndicator;
 
     var config = {
       type: "doughnut",
       data: {
         datasets: [
           {
-            data: [maxValue, difValue],
+            data: [maxValueOfIndicator, maxValueDifference],
             backgroundColor: ["#6b48ff", "darkgray"]
           }
         ]
@@ -86,7 +93,7 @@ window.data = {
           doughnutlabel: {
             labels: [
               {
-                text: maxValue + "%",
+                text: maxValueOfIndicator + "%",
                 font: {
                   size: "100"
                 },
@@ -99,31 +106,37 @@ window.data = {
     };
     // eslint-disable-next-line no-undef
     new Chart(chartMax, config);
+
+    return maxValueOfIndicator;
   },
 
   // Agrenado dona con valor promedio
   showDoughnutAverageValue(selectIndicator, selectedData, chartAverage) {
     let indicatorNumber = selectIndicator;
-    let count = 0;
-    let average = 0;
-    let mount = 0;
-    let minValue = 0;
+    let totalOfIndicators = 0;
+    let averageValueOfIndicator = 0;
+    let sumOfIndicatorsData = 0;
+    let averageValueDifference = 0;
     for (let year in selectedData.indicators[indicatorNumber].data) {
       if (selectedData.indicators[indicatorNumber].data[year] !== "") {
-        mount = mount + selectedData.indicators[indicatorNumber].data[year];
-        count = count + 1;
+        sumOfIndicatorsData =
+          sumOfIndicatorsData +
+          selectedData.indicators[indicatorNumber].data[year];
+        totalOfIndicators = totalOfIndicators + 1;
       }
     }
-    average = mount / count;
-    // console.log(average);
-    minValue = 100 - average;
+    averageValueOfIndicator = parseFloat(
+      sumOfIndicatorsData / totalOfIndicators
+    ).toFixed("2");
+    // console.log(averageValueOfIndicator);
+    averageValueDifference = 100 - averageValueOfIndicator;
 
     var config = {
       type: "doughnut",
       data: {
         datasets: [
           {
-            data: [average, minValue],
+            data: [averageValueOfIndicator, averageValueDifference],
             backgroundColor: ["#6b48ff", "darkgray"]
           }
         ]
@@ -147,7 +160,7 @@ window.data = {
           doughnutlabel: {
             labels: [
               {
-                text: average + "%",
+                text: averageValueOfIndicator + "%",
                 font: {
                   size: "100"
                 },
@@ -160,5 +173,7 @@ window.data = {
     };
     // eslint-disable-next-line no-undef
     new Chart(chartAverage, config);
+
+    return averageValueOfIndicator;
   }
 };
