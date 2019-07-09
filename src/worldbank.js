@@ -1,4 +1,4 @@
-const WORLDBANK = {
+ const WORLDBANK = {
   "PER": {
     "indicators": [
       {
@@ -36720,4 +36720,6 @@ const WORLDBANK = {
     "lastUpdated": "2018-11-14"
   }
 }
-;;
+;
+
+window.WORLDBANK = WORLDBANK;

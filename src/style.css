@@ -278,7 +278,7 @@ div .conexCh,
 }
 .indSelect {
   display: flex;
-  align-items: center;
+  align-items: left;
   justify-content: space-between;
   max-width: 994px;
   margin: 40px auto;
@@ -352,7 +352,8 @@ div .conexCh,
   header,
   .heroBanner,
   .infoFooter,
-  .indSelect {
+  .indSelect,
+  .indicatorsChart {
     padding: 20px 60px;
   }
 }

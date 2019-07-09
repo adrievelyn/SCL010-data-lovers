@@ -1,16 +1,15 @@
 /* Manejo del DOM */
-
 /*Varibles para obtener data de cada país, ya separada*/
 //console.log(WORLDBANK);
-const chileData = WORLDBANK.CHL;
-const peruData = WORLDBANK.PER;
-const mexicoData = WORLDBANK.MEX;
-const brasilData = WORLDBANK.BRA;
+const chileData = window.WORLDBANK.CHL;
+const peruData = window.WORLDBANK.PER;
+const mexicoData = window.WORLDBANK.MEX;
+const brasilData = window.WORLDBANK.BRA;
 
 /*Lectura y manejo de la variable país*/
 var urlParams = new URLSearchParams(window.location.search);
 let selectCountry = urlParams.get("country");
-console.log(selectCountry);
+// console.log(selectCountry);
 
 let selectedData;
 switch (selectCountry) {
@@ -53,12 +52,15 @@ for (let i = 0; i < selectedData.indicators.length; i++) {
   indicatorList.add(option);
 }
 
-let selectIndicator;
 document.getElementById("indicatorsSelect").addEventListener("change", () => {
-  selectIndicator = document.getElementById("indicatorsSelect").value;
-  mostrarIndicador();
-  showDoughnutMaxValue();
-  showDoughnutAverageValue();
+  const selectIndicator = document.getElementById("indicatorsSelect").value;
+  window.data.mostrarIndicador(selectIndicator, selectedData, graphPlaceholder);
+  window.data.showDoughnutMaxValue(selectIndicator, selectedData, chartMax);
+  window.data.showDoughnutAverageValue(
+    selectIndicator,
+    selectedData,
+    chartAverage
+  );
 });
 
 var graphPlaceholder = document
