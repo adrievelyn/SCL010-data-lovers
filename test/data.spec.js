@@ -1,6 +1,6 @@
-describe("mostrarIndicador", () => {
-  it("debería ser una función", () => {
-    assert.equal(typeof window.mostrarIndicador, "function");
+describe("data", () => {
+  it(" data debería ser un objeto", () => {
+    assert.equal(typeof window.data, "object");
   });
 
   // it('debería retornar "example"', () => {
