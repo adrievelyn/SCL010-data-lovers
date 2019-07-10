@@ -3,14 +3,14 @@
 window.data = {
   Chart: {},
   // CREACIÓN GRÁFICO DE LÍNEAS PARA LA DATA:
-  mostrarIndicador: (selectIndicator, selectedData, graphPlaceholder) => {
+  mostrarIndicador: (selectedData, selectedIndicator) => {
     // console.log(selectIndicator);
     // console.log(selectedData.indicators[selectIndicator]);
 
     // Inicializamos los arreglos vacios.
     let arrayToChart = [];
     let labelArray = [];
-    let indicatorNumber = selectIndicator;
+    let indicatorNumber = selectedIndicator;
 
     // Estructura repetitiva para generar los puntos del gráfico en arreglo de objetos, a partir de la data. (no incluye los valores que sean igual cero)
     for (let year in selectedData.indicators[indicatorNumber].data) {
@@ -21,33 +21,13 @@ window.data = {
         labelArray.push(year);
       }
     }
-
-    // Generando el Gráfico
-    // eslint-disable-next-line no-undef
-    new Chart(graphPlaceholder, {
-      type: "line",
-      maintainAspectRatio: false,
-      data: {
-        labels: labelArray,
-        datasets: [
-          {
-            label: selectedData.indicators[indicatorNumber].indicatorName,
-            data: arrayToChart,
-            borderColor: "#6B48FF",
-            pointBackgroundColor: "#91CAC5",
-            backgroundColor: "rgba(0, 0, 0, 0)"
-          }
-        ]
-      }
-    });
-
     // console.table(arrayToChart);
     return { arrayToChart, labelArray };
   },
 
   //Agregando dona con el valor maximo
-  showDoughnutMaxValue(selectIndicator, selectedData, chartMax) {
-    let indicatorNumber = selectIndicator;
+  showDoughnutMaxValue(selectedIndicator, selectedData, chartMax) {
+    let indicatorNumber = selectedIndicator;
     let maxValueOfIndicator = 0;
     let maxValueDifference = 0;
     for (let year in selectedData.indicators[indicatorNumber].data) {
@@ -111,8 +91,8 @@ window.data = {
   },
 
   // Agrenado dona con valor promedio
-  showDoughnutAverageValue(selectIndicator, selectedData, chartAverage) {
-    let indicatorNumber = selectIndicator;
+  showDoughnutAverageValue(selectedIndicator, selectedData, chartAverage) {
+    let indicatorNumber = selectedIndicator;
     let totalOfIndicators = 0;
     let averageValueOfIndicator = 0;
     let sumOfIndicatorsData = 0;

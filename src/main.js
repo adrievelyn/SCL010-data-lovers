@@ -53,11 +53,40 @@ for (let i = 0; i < selectedData.indicators.length; i++) {
 }
 
 document.getElementById("indicatorsSelect").addEventListener("change", () => {
-  const selectIndicator = document.getElementById("indicatorsSelect").value;
-  window.data.mostrarIndicador(selectIndicator, selectedData, graphPlaceholder);
-  window.data.showDoughnutMaxValue(selectIndicator, selectedData, chartMax);
+  const selectedIndicator = document.getElementById("indicatorsSelect").value;
+
+  const labelArrayGraph = window.data.mostrarIndicador(
+    selectedData,
+    selectedIndicator
+  ).labelArray;
+  const arrayToChartGraph = window.data.mostrarIndicador(
+    selectedData,
+    selectedIndicator
+  ).arrayToChart;
+
+  // Generando el Gráfico de líneas
+  // eslint-disable-next-line no-undef
+  new Chart(graphPlaceholder, {
+    type: "line",
+    maintainAspectRatio: false,
+    data: {
+      labels: labelArrayGraph,
+      datasets: [
+        {
+          label: selectedData.indicators[selectedIndicator].indicatorName,
+          data: arrayToChartGraph,
+          borderColor: "#6B48FF",
+          pointBackgroundColor: "#91CAC5",
+          backgroundColor: "rgba(0, 0, 0, 0)"
+        }
+      ]
+    }
+  });
+
+  window.data.showDoughnutMaxValue(selectedIndicator, selectedData, chartMax);
+
   window.data.showDoughnutAverageValue(
-    selectIndicator,
+    selectedIndicator,
     selectedData,
     chartAverage
   );
@@ -67,5 +96,4 @@ var graphPlaceholder = document
   .getElementById("indicatorsChart")
   .getContext("2d");
 var chartMax = document.getElementById("doughnutMax").getContext("2d");
-
 var chartAverage = document.getElementById("doughnutAverages").getContext("2d");
