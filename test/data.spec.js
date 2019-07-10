@@ -9,6 +9,61 @@ describe("data", () => {
     assert.equal(typeof window.data, "object");
   });
 
+  const sampleIndicator = {
+    sampleIndicators: [
+      {
+        data: { "2001": "", "2002": 31.4799995422363 },
+        countryName: "Perú",
+        countryCode: "PER",
+        indicatorName:
+          "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
+        indicatorCode: "SL.TLF.PART.FE.ZS"
+      },
+      {
+        data: { "2001": 68.7900009155273, "2002": 68.9080963134766 },
+        countryName: "Perú",
+        countryCode: "PER",
+        indicatorName:
+          "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
+        indicatorCode: "SL.TLF.CACT.NE.ZS"
+      }
+    ]
+  };
+
+  describe("data.orderIndicators", () => {
+    it("debería ser una función", () => {
+      assert.equal(typeof window.data.orderIndicators, "function");
+    });
+
+    it("debería retornar 1 para un par de nombres de indicadores", () => {
+      let resultIndicatorsOrdered = {
+        sampleIndicators: [
+          {
+            data: { "2001": "", "2002": 31.4799995422363 },
+            countryName: "Perú",
+            countryCode: "PER",
+            indicatorName:
+              "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
+            indicatorCode: "SL.TLF.PART.FE.ZS"
+          },
+          {
+            data: { "2001": 68.7900009155273, "2002": 68.9080963134766 },
+            countryName: "Perú",
+            countryCode: "PER",
+            indicatorName:
+              "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
+            indicatorCode: "SL.TLF.CACT.NE.ZS"
+          }
+        ]
+      };
+
+      assert.deepEqual(
+        window.data.orderIndicators(sampleIndicator),
+        resultIndicatorsOrdered
+      );
+    });
+  });
+
   const sampleData = {
     indicators: [
       {
@@ -62,13 +117,13 @@ describe("data", () => {
     ]
   };
 
-  describe("data.mostrarIndicador", () => {
+  describe("data.informationToGenerateGraph", () => {
     it("debería ser una función", () => {
-      assert.equal(typeof window.data.mostrarIndicador, "function");
+      assert.equal(typeof window.data.informationToGenerateGraph, "function");
     });
 
     it("debería retornar el objeto que contiene 2 arreglos de datos y labels", () => {
-      let resultado = {
+      let resultArrays = {
         arrayToChart: [
           22.5900001525879,
           31.9099998474121,
@@ -92,27 +147,46 @@ describe("data", () => {
           "2017"
         ]
       };
-      assert.deepEqual(window.data.mostrarIndicador(sampleData, 0), resultado);
+      assert.deepEqual(
+        window.data.informationToGenerateGraph(sampleData, 0),
+        resultArrays
+      );
     });
   });
 
-  describe("data.showDoughnutMaxValue", () => {
+  describe("data.maximumValueCalculation", () => {
     it("debería ser una función", () => {
-      assert.equal(typeof window.data.showDoughnutMaxValue, "function");
+      assert.equal(typeof window.data.maximumValueCalculation, "function");
     });
 
-    // it('debería retornar "example"', () => {
-    //   assert.equal(example(), "example");
-    // });
+    it("debería retornar el valor máximo dentro de un objeto de valores para un indicador seleccionado", () => {
+      let resultMaximum = {
+        maxValueOfIndicator: "57.01",
+        maxValueDifference: 42.99
+      };
+
+      assert.deepEqual(
+        window.data.maximumValueCalculation(sampleData, 1),
+        resultMaximum
+      );
+    });
   });
 
-  describe("data.showDoughnutAverageValue", () => {
+  describe("data.averageValueCalculation", () => {
     it("debería ser una función", () => {
-      assert.equal(typeof window.data.showDoughnutAverageValue, "function");
+      assert.equal(typeof window.data.averageValueCalculation, "function");
     });
 
-    // it('debería retornar "example"', () => {
-    //   assert.equal(example(), "example");
-    // });
+    it("debería retornar el valor máximo dentro de un objeto de valores para un indicador seleccionado", () => {
+      let resultAverage = {
+        averageValueOfIndicator: "54.93",
+        averageValueDifference: 45.07
+      };
+
+      assert.deepEqual(
+        window.data.averageValueCalculation(sampleData, 1),
+        resultAverage
+      );
+    });
   });
 });

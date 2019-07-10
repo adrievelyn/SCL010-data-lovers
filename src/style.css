@@ -45,6 +45,9 @@ a.active {
   font-weight: bold;
   text-decoration: underline;
 }
+.menu {
+  display: inline-flex;
+}
 .menu ul li {
   list-style: none;
   display: inline;
@@ -300,6 +303,7 @@ div .conexCh,
 }
 .RRSS {
   align-items: center;
+  display: inline-flex;
 }
 .socialRedes {
   color: white;
@@ -374,12 +378,19 @@ div .conexCh,
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 376px) {
   .menu ul li {
     margin-left: 25px;
   }
   .menu ul {
     padding: 0;
+  }
+  header,
+  .heroBanner,
+  .infoFooter,
+  .indSelect,
+  .indicatorsChart {
+    padding: 0px 15px;
   }
 }
 

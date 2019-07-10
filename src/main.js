@@ -43,7 +43,7 @@ switch (selectCountry) {
     break;
 }
 
-selectedData.indicators = window.data.orderIndicators(selectedData.indicators);
+// selectedData.indicators = window.data.orderIndicators(selectedData.indicators);
 
 // For para recorrer la lista de indicadores y mostrarlos en el select
 for (let i = 0; i < selectedData.indicators.length; i++) {
@@ -58,11 +58,11 @@ for (let i = 0; i < selectedData.indicators.length; i++) {
 document.getElementById("indicatorsSelect").addEventListener("change", () => {
   const selectedIndicator = document.getElementById("indicatorsSelect").value;
 
-  const labelArrayGraph = window.data.indicatorGraph(
+  const labelArrayGraph = window.data.informationToGenerateGraph(
     selectedData,
     selectedIndicator
   ).labelArray;
-  const arrayToChartGraph = window.data.indicatorGraph(
+  const arrayToChartGraph = window.data.informationToGenerateGraph(
     selectedData,
     selectedIndicator
   ).arrayToChart;

@@ -2,15 +2,15 @@
 
 window.data = {
   Chart: {},
-  // FUNCIÓN PARA ORDENAR INDICAORES DENTRO DEL SELECT
+  // FUNCIÓN PARA ORDENAR INDICADORES DENTRO DEL SELECT
   orderIndicators: indicators => {
     return indicators.sort((a, b) => {
       return a.indicatorName < b.indicatorName ? -1 : 1;
     });
   },
 
-  // GENERACIÓN DE ARREGLOS PARA CREACIÓN GRÁFICO DE LÍNEAS:
-  indicatorGraph: (selectedData, selectedIndicator) => {
+  // FUNCIÓN PARA GENERACIÓN DE ARREGLOS PARA CREACIÓN DE GRÁFICO DE LÍNEAS:
+  informationToGenerateGraph: (selectedData, selectedIndicator) => {
     let arrayToChart = [];
     let labelArray = [];
     let indicatorNumber = selectedIndicator;
@@ -27,7 +27,7 @@ window.data = {
     return { arrayToChart, labelArray };
   },
 
-  // CÁLCULO DEL MÁXIMO PARA CREACIÓN GRÁFICO DE DONAS:
+  // FUNCIÓN PARA CÁLCULO DEL MÁXIMO PARA CREACIÓN GRÁFICO DE DONAS:
   maximumValueCalculation(selectedData, selectedIndicator) {
     let indicatorNumber = selectedIndicator;
     let maxValueOfIndicator = 0;
@@ -49,7 +49,7 @@ window.data = {
     return { maxValueOfIndicator, maxValueDifference };
   },
 
-  // CÁLCULO DEL PROCREACIÓN GRÁFICO DE DONAS PARA EL VALOR MÁXIMO
+  // FUNCIÓN PARA CÁLCULO DEL PROMEDIO PARA CREACIÓN GRÁFICO DE DONAS:
   averageValueCalculation(selectedData, selectedIndicator) {
     let indicatorNumber = selectedIndicator;
     let totalOfIndicators = 0;
