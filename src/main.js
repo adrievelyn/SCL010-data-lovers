@@ -43,6 +43,8 @@ switch (selectCountry) {
     break;
 }
 
+selectedData.indicators = window.data.orderIndicators(selectedData.indicators);
+
 // For para recorrer la lista de indicadores y mostrarlos en el select
 for (let i = 0; i < selectedData.indicators.length; i++) {
   let indicatorList = document.getElementById("indicatorsSelect");

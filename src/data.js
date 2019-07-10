@@ -2,6 +2,11 @@
 
 window.data = {
   Chart: {},
+  orderIndicators: indicators => {
+    return indicators.sort((a, b) => {
+      return a.indicatorName < b.indicatorName ? -1 : 1;
+    });
+  },
   // CREACIÓN GRÁFICO DE LÍNEAS PARA LA DATA:
   mostrarIndicador: (selectedData, selectedIndicator) => {
     // console.log(selectIndicator);
