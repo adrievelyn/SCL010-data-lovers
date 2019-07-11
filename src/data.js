@@ -4,9 +4,9 @@ window.data = {
   Chart: {},
   // FUNCIÓN PARA ORDENAR INDICADORES DENTRO DEL SELECT
   orderIndicators: indicators => {
-    return indicators.sort((a, b) => {
-      return a.indicatorName < b.indicatorName ? -1 : 1;
-    });
+    return indicators.sort((a, b) =>
+      a.indicatorName < b.indicatorName ? -1 : 1
+    );
   },
 
   // FUNCIÓN PARA GENERACIÓN DE ARREGLOS PARA CREACIÓN DE GRÁFICO DE LÍNEAS:
@@ -14,13 +14,9 @@ window.data = {
     let arrayToChart = [];
     let labelArray = [];
     let indicatorNumber = selectedIndicator;
-
-    // Estructura repetitiva para generar los puntos del gráfico en arreglo de objetos, a partir de la data. (no incluye los valores que sean igual cero)
     for (let year in selectedData.indicators[indicatorNumber].data) {
       if (selectedData.indicators[indicatorNumber].data[year] !== "") {
-        // Agregando al arreglo de los valores
         arrayToChart.push(selectedData.indicators[indicatorNumber].data[year]);
-        // Agregando al arreglo de los años
         labelArray.push(year);
       }
     }
@@ -45,7 +41,6 @@ window.data = {
       }
     }
     maxValueDifference = 100 - maxValueOfIndicator;
-
     return { maxValueOfIndicator, maxValueDifference };
   },
 
@@ -67,10 +62,7 @@ window.data = {
     averageValueOfIndicator = parseFloat(
       sumOfIndicatorsData / totalOfIndicators
     ).toFixed("2");
-
-    // console.log(averageValueOfIndicator);
     averageValueDifference = 100 - averageValueOfIndicator;
-
     return { averageValueOfIndicator, averageValueDifference };
   }
 };

@@ -9,26 +9,24 @@ describe("data", () => {
     assert.equal(typeof window.data, "object");
   });
 
-  const sampleIndicator = {
-    sampleIndicators: [
-      {
-        data: { "2001": "", "2002": 31.4799995422363 },
-        countryName: "Perú",
-        countryCode: "PER",
-        indicatorName:
-          "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
-        indicatorCode: "SL.TLF.PART.FE.ZS"
-      },
-      {
-        data: { "2001": 68.7900009155273, "2002": 68.9080963134766 },
-        countryName: "Perú",
-        countryCode: "PER",
-        indicatorName:
-          "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
-        indicatorCode: "SL.TLF.CACT.NE.ZS"
-      }
-    ]
-  };
+  const sampleIndicator = [
+    {
+      data: { "2001": "", "2002": 31.4799995422363 },
+      countryName: "Perú",
+      countryCode: "PER",
+      indicatorName:
+        "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
+      indicatorCode: "SL.TLF.PART.FE.ZS"
+    },
+    {
+      data: { "2001": 68.7900009155273, "2002": 68.9080963134766 },
+      countryName: "Perú",
+      countryCode: "PER",
+      indicatorName:
+        "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
+      indicatorCode: "SL.TLF.CACT.NE.ZS"
+    }
+  ];
 
   describe("data.orderIndicators", () => {
     it("debería ser una función", () => {
@@ -36,26 +34,24 @@ describe("data", () => {
     });
 
     it("debería retornar 1 para un par de nombres de indicadores", () => {
-      let resultIndicatorsOrdered = {
-        sampleIndicators: [
-          {
-            data: { "2001": "", "2002": 31.4799995422363 },
-            countryName: "Perú",
-            countryCode: "PER",
-            indicatorName:
-              "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
-            indicatorCode: "SL.TLF.PART.FE.ZS"
-          },
-          {
-            data: { "2001": 68.7900009155273, "2002": 68.9080963134766 },
-            countryName: "Perú",
-            countryCode: "PER",
-            indicatorName:
-              "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
-            indicatorCode: "SL.TLF.CACT.NE.ZS"
-          }
-        ]
-      };
+      let resultIndicatorsOrdered = [
+        {
+          data: { "2001": "", "2002": 31.4799995422363 },
+          countryName: "Perú",
+          countryCode: "PER",
+          indicatorName:
+            "Empleo de tiempo parcial, mujeres (% del total de mujeres empleadas)",
+          indicatorCode: "SL.TLF.PART.FE.ZS"
+        },
+        {
+          data: { "2001": 68.7900009155273, "2002": 68.9080963134766 },
+          countryName: "Perú",
+          countryCode: "PER",
+          indicatorName:
+            "Tasa de participación en la fuerza laboral, total (% de la población total mayor de 15 años) (estimación nacional)",
+          indicatorCode: "SL.TLF.CACT.NE.ZS"
+        }
+      ];
 
       assert.deepEqual(
         window.data.orderIndicators(sampleIndicator),
